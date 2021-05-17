@@ -181,6 +181,7 @@ body{
     margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-size: 20px;
 }
 
 .ajax-section .city-temp{
