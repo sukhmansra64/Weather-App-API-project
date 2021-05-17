@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather App</title>
+    <link rel="stylesheet" href="Style.css"/>
 </head>
 <body>
 <section class="Top-banner">
     <div class="Container">
-        <h1>Sukhman Sra's Weather App</h1>
+        <h1 class="heading">Sukhman Sra's Weather App</h1>
         <form>
-            <input type="text" placeholder="Enter a City"autofocus>
+            <input id="input" type="text" placeholder="Enter a City"autofocus>
             <button type="submit">ENTER</button>
-            <span class="msg"></span>
+            <span id="span" class="msg"></span>
         </form>
     </div>
 </section>
-<section class="ajax-selector">
+<section class="ajax-section">
     <div class="Container">
-        <ul class="cities">
+        <ul class="cities" id="cities">
         </ul>
     </div>
 </section>
+<script src="core.js"></script>
 </body>
 </html>
