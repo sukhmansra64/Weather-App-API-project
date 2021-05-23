@@ -60,14 +60,20 @@ body{
     padding: 0px;
 }
 
-.results ul {margin: 0; padding: 0; }
+.results ul {margin: 0; padding: 0;position: absolute;
+    width: 100%; z-index: 1;border-radius: 5px}
 .results ul li {
+    background-color: var(--bg_main);
     list-style: none;
     border-radius: 3px;
-    opacity: 0;
+    opacity: 1;
     display: none;
     padding: 8px 12px;
     transition: all .5s linear;
+    position: relative;
+}
+.show .results ul{
+    height: 120px;overflow-y: scroll;overflow-x: hidden;
 }
 
 .show .results ul li {
@@ -80,7 +86,8 @@ body{
 }
 
 .results ul li:hover {
-    background: #ececec
+    background: #ececec;
+    cursor: pointer;
 }
 /* Second Section */
 

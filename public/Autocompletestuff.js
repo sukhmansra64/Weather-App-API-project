@@ -13,10 +13,18 @@ async function autocomplete(){
             results=filter(cityArray["places"],"name",input);
 
         }
-        console.log(results);
         renderResults(results);
+        const autoSearchListItem=document.querySelector('.show .results ul li')
+        if(autoSearchListItem){
+            autoSearchListItem.addEventListener('click',()=>{
+                inp.value=autoSearchListItem.textContent;
+                removeList();
+            });
+        }
     });
+
 }
+document.addEventListener('click',removeList);
 function filter(array, key, value){
     let i, j, filtered = [], item;
 
@@ -35,10 +43,14 @@ function renderResults(results){
         return searchInput.classList.remove('show');
     }
     const content =results.map((item)=>{
-        return `<li>${item["name"]+","+item["country"]}</li>`
+        return `<li>${item["name"]+", "+item["country"]}</li>`
     }).join('')
     searchInput.classList.add('show');
     resultsWrapper.innerHTML=`<ul>${content}</ul>`;
+}
+function removeList(){
+    let x=0;
+    renderResults(x);
 }
 
 autocomplete();
