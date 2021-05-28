@@ -1,6 +1,7 @@
 const inp=document.getElementById('input');
 const searchInput=document.querySelector('.wrapper');
 const resultsWrapper=document.getElementById('results');
+let currentFocus;
 async function autocomplete(){
     const path = './cities.json/cities.json'
     const response = await fetch(path);
@@ -10,17 +11,18 @@ async function autocomplete(){
        let results = [];
        let input = inp.value;
         if (input.length){
-            results=filter(cityArray["places"],"name",input);
+            results=filter(cityArray["places"],"name",input.toLowerCase());
 
         }
         renderResults(results);
         const autoSearchListItem=document.querySelector('.show .results ul li')
         if(autoSearchListItem){
-            autoSearchListItem.addEventListener('click',()=>{
+            autoSearchListItem.addEventListener('click',evt=>{
                 inp.value=autoSearchListItem.textContent;
                 removeList();
             });
         }
+
     });
 
 }
@@ -30,7 +32,7 @@ function filter(array, key, value){
 
     for(i =  0, j = array.length; i<j; i++){
         item = array[i];
-        if(typeof item[key] !== "undefined" && item[key].includes(value)){
+        if(typeof item[key] !== "undefined" && (item[key]).toLowerCase().includes(value)){
             filtered.push(item);
         }
     }
