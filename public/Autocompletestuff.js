@@ -23,7 +23,6 @@ async function autocomplete(){
             autoSearchListItem.addEventListener('click',evt=>{
                 inp.value=autoSearchListItem.textContent;
                 const url = `https://api.openweathermap.org/data/2.5/weather?q=${inp.value}&appid=${apiKey}&units=metric`;
-                console.log(url);
                 fetch(url).then(response => response.json()).then(data => {
                     const {main, name, sys, weather} = data;
                     const icon = `https:////openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
