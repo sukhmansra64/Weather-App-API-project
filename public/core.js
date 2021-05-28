@@ -3,8 +3,7 @@ const input = document.querySelector(".Top-banner form input");
 const msg = document.querySelector(".Top-banner form .msg");
 const list = document.querySelector(".ajax-section .cities");
 const apiKey = "1773c4b9bb594383d9d33f868be209fd";
-function core(input) {
-    form.addEventListener("submit", evt => {
+function core(input,evt) {
         evt.preventDefault();
         let inputVal = input.value;
         if (inputVal) {
@@ -56,8 +55,10 @@ function core(input) {
             form.reset();
             input.focus();
         }
-    });
 }
 
-core(input);
+form.addEventListener('submit',evt => {
+    core(input,evt);
+})
+
 
