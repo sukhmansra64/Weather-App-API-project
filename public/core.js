@@ -1,8 +1,12 @@
+/*objects for each required html element on the app along with the API key*/
 const form = document.querySelector(".Top-banner form");
 const input = document.querySelector(".Top-banner form input");
 const msg = document.querySelector(".Top-banner form .msg");
 const list = document.querySelector(".ajax-section .cities");
 const apiKey = "1773c4b9bb594383d9d33f868be209fd";
+/*function which compares the name of each city to prevent doubles in the weather app
+* function is also responsible for making the API call and adding the information onto
+* an unordered list and display them in html*/
 function core(input,evt,form,msg,list,apiKey) {
         evt.preventDefault();
         let inputVal = input.value;
@@ -56,7 +60,7 @@ function core(input,evt,form,msg,list,apiKey) {
             input.focus();
         }
 }
-
+/*creates an event listener for when the form is submitted to run the core function of the app*/
 form.addEventListener('submit',evt => {
     core(input,evt,form,msg,list,apiKey);
 })

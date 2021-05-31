@@ -1,6 +1,10 @@
+//make variables to store the api for the IP address api and the weather api
 const endpoint = 'http://ip-api.com/json/?fields=status,message,city,countryCode';
 const weatherApiKey="1773c4b9bb594383d9d33f868be209fd"
+//make an http request object
 let xhr = new XMLHttpRequest();
+//make a function for the statechange which fetches the information of the users IP and the respective location data
+//the object then returns the IP location data and runs the core function using the information to display a forecast of their current location
 xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         const response = JSON.parse(this.responseText);

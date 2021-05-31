@@ -1,6 +1,6 @@
 /* First Section */
 :root{
-    --bg_main: #0a1f44;
+    --bg_main :linear-gradient(to right top, #dd00ff, #d874ff, #daaaff, #e7d6ff, #ffffff);
     --text_light: #fff;
     --text_med: #53627c;
     --text_dark: #1e2432;
@@ -56,6 +56,13 @@ body{
 }
 
 /* auto complete stuff */
+
+.wrapper{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
 .results {
     padding: 0px;
 }
@@ -63,7 +70,7 @@ body{
 .results ul {margin: 0; padding: 0;position: absolute;
     width: 100%; z-index: 1;border-radius: 5px}
 .results ul li {
-    background-color: var(--bg_main);
+    background-color: #ffffff;
     list-style: none;
     border-radius: 3px;
     opacity: 1;
@@ -71,6 +78,7 @@ body{
     padding: 8px 12px;
     transition: all .5s linear;
     position: relative;
+    color:black;
 }
 .show .results ul{
     height: 120px;overflow-y: scroll;overflow-x: hidden;
@@ -96,10 +104,14 @@ body{
 }
 
 .heading{
+    padding: 20px 20px 20px 20px;
+    background-color: #ffffff;
+    color: #000000;
     font-weight: bold;
     font-size: 4rem;
     letter-spacing: 0.02em;
-    padding: 0 0 30px 0;
+    text-align: center;
+    border-radius: 20px;
 }
 
 .Top-banner form{
@@ -113,6 +125,7 @@ body{
     height: 40px;
     padding: 5px 5px 10px;
     border-bottom: 1px solid;
+    color: black;
 }
 
 .Top-banner form input ::placeholder{

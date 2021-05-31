@@ -1,3 +1,4 @@
+/*objects for each required html element on the app along with the API key*/
 const inp=document.getElementById('input');
 const searchInput=document.querySelector('.wrapper');
 const resultsWrapper=document.getElementById('results');
@@ -5,7 +6,10 @@ const form = document.querySelector(".Top-banner form");
 const msg = document.querySelector(".Top-banner form .msg");
 const list = document.querySelector(".ajax-section .cities");
 const apiKey = "1773c4b9bb594383d9d33f868be209fd";
-
+//the autocomplete function allows for the search bar to have autofill suggestions using a JSON file with over 120000 cities on it
+//this is done when you begin to type in the search bar, the function then takes that string and compares it to the values in the JSON
+//the compared values are then displayed through being added to an unordered list onto the html
+//when the html element is clicked, it runs the CORE function from the previous js file
 async function autocomplete(){
     const path = './cities.json/cities.json'
     const response = await fetch(path);
@@ -51,6 +55,7 @@ async function autocomplete(){
     });
 
 }
+//this event listener is triggered when you click anywhere on the screen and runs the removelists function
 document.addEventListener('click',removeList);
 function filter(array, key, value){
     let i, j, filtered = [], item;
@@ -64,7 +69,7 @@ function filter(array, key, value){
 
     return filtered;
 }
-
+//the render results function takes the compared array from the autocomplete function and then makes them into html elements to make the autofill suggestions
 function renderResults(results){
     if (!results.length){
         return searchInput.classList.remove('show');
@@ -75,6 +80,7 @@ function renderResults(results){
     searchInput.classList.add('show');
     resultsWrapper.innerHTML=`<ul>${content}</ul>`;
 }
+//the remove list function rids of the autofill suggestions through providing render results a value of 0 which triggers the base case and gets rid of the list
 function removeList(){
     let x=0;
     renderResults(x);
