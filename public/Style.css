@@ -1,6 +1,6 @@
 /* First Section */
 :root{
-    --bg_main :linear-gradient(to right top, #dd00ff, #d874ff, #daaaff, #e7d6ff, #ffffff);
+    --bg_main :rgb(64,64,64);
     --text_light: #fff;
     --text_med: #53627c;
     --text_dark: #1e2432;
